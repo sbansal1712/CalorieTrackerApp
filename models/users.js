@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
 
-const AdSchema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
   {
-    Username: { type: String },
+    Username: { type: String, unique : true },
     Password: { type: String },
     FullName: { type: String },
     Meals : {type : mongoose.Schema.Types.Mixed}
@@ -13,5 +13,5 @@ const AdSchema = new mongoose.Schema(
 );
 
 
-const Mst_Users = mongoose.model("Mst_Ads", AdSchema);
+const Mst_Users = mongoose.model("Mst_Users", UserSchema);
 module.exports = Mst_Users;

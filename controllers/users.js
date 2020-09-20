@@ -8,6 +8,7 @@ exports.createNewUser = async (req, res) => {
     var result = await user.save();
     return res.send(result);
   } catch (err) {
+  
     return res.send(err);
   }
 };
